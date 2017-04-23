@@ -1,0 +1,21 @@
+p {
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+
+p.time {
+    font-size: 25px;
+}
+
+.page {
+	min-width: 350px;
+}
+
+.page .box {
+	width: 300px;
+	margin: 15px auto;
+	padding: 15px 30px 20px 30px;
+	border: solid 2px #acacac;
+	border-radius: 10px;
+}
