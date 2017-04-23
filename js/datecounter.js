@@ -1,10 +1,14 @@
-$.fn.dateCounter = function() {
-	var now = new Date();
+$.fn.dateCounter = function(params) {
 	var that = this;
 
+	that.options = {
+		targetDate: params.targetDate
+	};
+	that.options.useGMT = params.useGMT || true;
+
 	function calculateDiffInMillis() {
-		var now = new Date();
-		var date = getDate();
+		var now = getDate(new Date());
+		var date = getDate(that.options.targetDate);
 		return date.getTime() - now.getTime();
 	}
 
@@ -49,14 +53,11 @@ $.fn.dateCounter = function() {
 		showCalculatedTime();
 	}
 
-	function getDate() {
-		var date = new Date();
-		date.setDate(12);
-		date.setMonth(9);
-		date.setFullYear(2017);
-		date.setHours(17);
-		date.setMinutes(40);
-		date.setSeconds(0);
+	function getDate(date) {
+		if (that.options.useGMT) {
+			date = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(),
+				date.getMinutes(), date.getSeconds()));
+		}
 		return date;
 	}
 
