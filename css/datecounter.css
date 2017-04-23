@@ -19,3 +19,19 @@ p.time {
 	border: solid 2px #acacac;
 	border-radius: 10px;
 }
+
+body > div {
+	margin: 5%;
+}
+
+div.panel div.panel-heading > h3.panel-title {
+	font-size: 300% !important;
+}
+
+div.panel div.panel-body > p {
+	font-size: 250%;
+}
+
+div.panel div.panel-body > p.time {
+	font-size: 320%;
+}
